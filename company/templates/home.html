@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<H1>Welcome to Home Page</H1>
+
+<p>the corent time is {% now "DATETIME_FORMAT" %}</p>
+
+<p>the are {{ inventory_list | length}} item in inventory</p>
+
+<ul>
+    {% for item in inventory_list %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<p>{{ greeting | title }}</p>
+
+{% comment %} add more contex here! {% endcomment %}
+
+{% endblock %}
